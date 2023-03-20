@@ -1,36 +1,30 @@
 'use strict';
 
-if (1) {
+const hamburger = 3;
+const fries = 3;
+const cola = 0;
+const nuggets = 2;
+
+if (hamburger === 3 && cola === 2 || fries === 3 && nuggets) {
     console.log('Ok!');
 } else {
-    console.log('Error!');
+    console.log('Not today');
 }
+console.log(hamburger === 3 && cola === 2 || nuggets && fries === 3);
+console.log(hamburger || cola || fries);
 
-const num = 50;
+console.log(hamburger && cola && fries);
+console.log(1 && 0);
+console.log(1 && 5);
+console.log(null && 5);
+console.log(0 && 'dggrebtrn');
 
-if (num < 49) {
-    console.log('num < 49');
-} else if (num > 100) {
-    console.log('num > 100');
-} else {
-    console.log('num > 49 and num < 100');
-}
+console.log(1 || 0);
+console.log(1 || 5);
+console.log(null || 5);
+console.log(0 || 'dggrebtrn');
 
-const num2 = 51;
-(num2 === 50) ? console.log(true) : console.log(false);
+let alexReport, samReport, kateReport, maryReport = 'done';
+console.log(alexReport || samReport || kateReport || maryReport);
 
-const num3 = 50;
-switch (num3) {
-    case 49:
-        console.log('49');
-        break;
-    case 100:
-        console.log('100');
-        break;
-    case '50':
-        console.log('50');
-        break;
-    default:
-        console.log('default');
-        break;
-}
+console.log(!0);
