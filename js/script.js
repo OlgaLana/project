@@ -1,31 +1,33 @@
 'use strict';
 
-for (let i = 0; i < 3; i++) {
-   console.log('i = ' + i);
-   for (let j = 0; j < 3; j++) {
-      console.log('j = ' + j);
-   }
+for (let i = 2; i <= 16; i++) {
+    if (i % 2 === 0) {
+        continue;
+    } else {
+        console.log(i);
+    }
 }
 
-let result = '';
-const length = 9;
-
-for (let i = 1; i < length; i++) {
-   for (let j = 0; j < i; j++) {
-      result += '*';
-   }
-   result += '\n';
+let i = 2;
+while (i < 16) {
+    i++;
+    if (i % 2 === 0) {
+        continue;
+    } else {
+        console.log(i);
+    }
 }
 
-console.log(result);
+const arrayOfNumbers = [];
+    // Пишем решение вот тут
+let j = 0;
+for (let i = 5; i <= 10; i++) {
+    arrayOfNumbers[j] = i;
+    j++;
+}
+console.log(arrayOfNumbers);
 
-first: for (let i = 0; i < 3; i++) {
-   console.log('i = ' + i);
-   for (let j = 0; j < 3; j++) {
-      console.log('j = ' + j);
-      for (let k = 0; k < 3; k++) {
-         if (k === 2) continue first;
-         console.log('k = ' + k);
-      }
-   }
+for (let i = 20; i >= 10; i--) {
+    console.log(i);
+    if (i === 13) break;
 }
