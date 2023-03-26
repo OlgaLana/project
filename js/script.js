@@ -1,33 +1,62 @@
 'use strict';
 
-    const arr = [3, 5, 8, 16, 20, 23, 50];
-    const result = [];
+const numberOfFilms = prompt('How much films you already saw?', '');
+// if (numberOfFilms < 10) {
+//     alert('not too much');
+// } else if (numberOfFilms >= 10 && numberOfFilms < 30) {
+//     alert('not bad');
+// } else if (numberOfFilms >= 30) {
+//     alert('cool!');
+// } else {
+//     alert('error');
+// }
 
-    // Пишем решение вот тут
-    for (let i = 0; i < arr.length; i++) {
-        result[i] = arr[i];
-    }
-    console.log(result);
-    
-    const data = [5, 10, 'Shopping', 20, 'Homework'];
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
-    // Пишем решение вот тут
-    for (let i = 0; i < data.length; i++) {
-        if (typeof(data[i]) === 'string') {
-            data[i] = `${data[i]} - done`;
-        } else {
-            data[i] = data[i] * 2;
-        }
-    }
-    console.log(data);
-    
-    const data = [5, 10, 'Shopping', 20, 'Homework'];
-    const result = [];
+// let i = 0;
+// while(i < personalMovieDB.count) {
+//     let a = prompt('What is one of the last movies you saw?', '');
+//     let b = prompt('How you can rate it?', '');
+//     if (a != null && b != null && b != '' && a != '' && a.length <= 50) {
+//         personalMovieDB.movies[a] = b;
+//         console.log('done');
+//     } else {
+//         console.log('error');
+//         i--;
+//     }
+//     i++;
+// }
 
-    // Пишем решение вот тут
-    let j = 0;
-    for (let i = data.length - 1; i > -1; i--) {
-        result[j] = data[i];
-        j++;
+let i = 0;
+do {
+    let a = prompt('What is one of the last movies you saw?', '');
+    let b = prompt('How you can rate it?', '');
+    if (a != null && b != null && b != '' && a != '' && a.length <= 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
     }
-    console.log(result);
+    i++;
+} while (i < personalMovieDB.count);
+
+// for (let i = 0; i < personalMovieDB.count; i++) {
+//     let a = prompt('What is one of the last movies you saw?', '');
+//     let b = prompt('How you can rate it?', '');
+//     if (a != null && b != null && b != '' && a != '' && a.length <= 50) {
+//         personalMovieDB.movies[a] = b;
+//         console.log('done');
+//     } else {
+//         console.log('error');
+//         i--;
+//     }
+// }
+
+console.log(personalMovieDB);
