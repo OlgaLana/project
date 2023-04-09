@@ -1,62 +1,76 @@
 'use strict';
 
-const numberOfFilms = prompt('How much films you already saw?', '');
-// if (numberOfFilms < 10) {
-//     alert('not too much');
-// } else if (numberOfFilms >= 10 && numberOfFilms < 30) {
-//     alert('not bad');
-// } else if (numberOfFilms >= 30) {
-//     alert('cool!');
-// } else {
-//     alert('error');
-// }
+const usdCurr = 28;
+const eurCurr = 32;
+const discount = 0.9;
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+function convert (amount, curr) {
+  return curr * amount;
+}
 
-// let i = 0;
-// while(i < personalMovieDB.count) {
-//     let a = prompt('What is one of the last movies you saw?', '');
-//     let b = prompt('How you can rate it?', '');
-//     if (a != null && b != null && b != '' && a != '' && a.length <= 50) {
-//         personalMovieDB.movies[a] = b;
-//         console.log('done');
-//     } else {
-//         console.log('error');
-//         i--;
-//     }
-//     i++;
-// }
+function promotion (result) {
+  console.log(result * discount);
+}
 
-let i = 0;
-do {
-    let a = prompt('What is one of the last movies you saw?', '');
-    let b = prompt('How you can rate it?', '');
-    if (a != null && b != null && b != '' && a != '' && a.length <= 50) {
-        personalMovieDB.movies[a] = b;
-        console.log('done');
-    } else {
-        console.log('error');
-        i--;
+// convert(500, usdCurr);
+// convert(500, eurCurr);
+
+const res = convert(500, usdCurr);
+promotion(res);
+
+function test () {
+  for (let i = 0; i < 5; i++) {
+    console.log(i);
+    if (i === 3) return
+  }
+  console.log('Done');
+}
+test();
+
+function doNothing () {};
+console.log(doNothing() === undefined);
+
+function sayHello(name) {
+  return `Hello ${name}`
+}
+console.log(sayHello('Olga'));
+
+function returnNeighboringNumbers(number) {
+  return [number - 1, number, number + 1];
+}
+// returnNeighboringNumbers(5);
+console.log(returnNeighboringNumbers(5));
+
+function getMathResult(num1, num2) {
+  if (typeof(num2) !== 'number' || num2 <= 0) {
+      return num1;
+  } else {
+      let result = num1;
+      let newString = `${num1}`;
+
+      for (let i = 1; i < num2; i++) {
+          result = result + num1;
+          newString = `${newString}---${result}`;
+      }
+
+      return newString;
+  }
+}
+// console.log(getMathResult(5, '3'));
+// console.log(getMathResult(5, 3));
+console.log(getMathResult(10, -5));
+
+const lines = 5;
+let result = '';
+
+for (let i = 0; i <= lines; i++) {
+    for (let j = 0; j < lines - i; j++) {
+        result += " ";
     }
-    i++;
-} while (i < personalMovieDB.count);
+    // for (let j = 0; j < 2 * i + 1; j++) {
+    //     result += "*";
+    // }
+    result += "\n";
+}
 
-// for (let i = 0; i < personalMovieDB.count; i++) {
-//     let a = prompt('What is one of the last movies you saw?', '');
-//     let b = prompt('How you can rate it?', '');
-//     if (a != null && b != null && b != '' && a != '' && a.length <= 50) {
-//         personalMovieDB.movies[a] = b;
-//         console.log('done');
-//     } else {
-//         console.log('error');
-//         i--;
-//     }
-// }
-
-console.log(personalMovieDB);
+console.log(result)
